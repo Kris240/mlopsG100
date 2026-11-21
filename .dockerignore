@@ -1,0 +1,9 @@
+.git
+.dvc/cache
+.venv
+__pycache__
+.pytest_cache
+data/raw/train.csv
+data/raw/later.csv
+mlruns
+mlartifacts

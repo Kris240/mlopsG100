@@ -1,0 +1,16 @@
+data:
+  train: data/raw/train.csv
+  later: data/raw/later.csv
+  holdout: data/raw/holdout_features.csv
+  target: handle_min
+  stuck_start: '2026-05-11'
+  stuck_end: '2026-05-31'
+model:
+  experiment_name: mp030-helpline
+  registered_model_name: mp030-handle-min
+  random_state: 42
+  validation_fraction: 0.2
+monitoring:
+  psi_bins: 10
+  later_train_fraction: 0.7
+  promotion_improvement: 0.15

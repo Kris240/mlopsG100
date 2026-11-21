@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mp030-api
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: mp030-api
+  template:
+    metadata:
+      labels:
+        app: mp030-api
+    spec:
+      containers:
+        - name: mp030-api
+          image: mp030-api:1.0
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 20
